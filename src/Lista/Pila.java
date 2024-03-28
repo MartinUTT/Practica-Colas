@@ -43,18 +43,21 @@ public class Pila {
     }//agregar
 
     /* Retirar paquetes de la cima */
-    public void retirar(){
+    public Paquete retirar() {
         if (pilaVacia()) {
             System.out.println("No hay paquetes para retirar");
+            return null;
         } else {
             cima--;
             System.out.println("Paquete retirado");
             System.out.println("Código:         " + paquete[cima].getCodigo());
             System.out.println("Descripción:    " + paquete[cima].getDescripcion());
-            paquete[cima].setCodigo(null);
-            paquete[cima].setDescripcion(null);
+            Paquete paqueteRetirado = paquete[cima];
+            paquete[cima] = new Paquete(); // Limpiar el elemento retirado de la pila
+            return paqueteRetirado;
         }
-    }//retirar
+    }
+    
 
     /* Imprimir lista de paquetes */
     public void imprimir(){
