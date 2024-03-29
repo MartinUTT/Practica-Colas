@@ -19,5 +19,5 @@ public class Paquete {
     public String getDescripcion() {
         return descripcion;
     }
-    
+
 }//Class
